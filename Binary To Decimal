@@ -1,0 +1,13 @@
+def binarytoDecimal(binary):
+    """ This function will convert binary to decimal value """
+    binary1 = binary
+    decimal,i,n = 0,0,0
+    while(binary != 0):
+        dec = binary%10
+        decimal = decimal + dec * pow(2,i)
+        binary = binary//10
+    print("The Decimal value of {} is {}".format(binary1, decimal))
+
+if __name__ == "__main__":
+    x = int(input("Enter binary no : "))
+    binarytoDecimal(x)
