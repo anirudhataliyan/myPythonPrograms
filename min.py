@@ -1,7 +1,0 @@
-a = int(input("Enter First Number = "))
-b = int(input("Enter Sec Number = "))
-c = int(input("Enter Third Number = "))
-d = int(input("Enter Fourth Number = "))
-e = int(input("Enter Fifth Number = "))
-f = min(a,b,c,d,e)
-print("Maximum Number = ",f)
