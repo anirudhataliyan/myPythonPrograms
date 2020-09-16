@@ -1,0 +1,175 @@
+FUNCTIONS USED IN NUMBERS
+append() - 		Add an element to the end of the list
+extend() - 		Add all elements of a list to the another list
+insert() -    	        Insert an item at the defined index
+remove() - 		Removes an item from the list
+pop() - 			Removes and returns an element at the given index
+clear() -			 Removes all items from the list
+index() - 			Returns the index of the first matched item
+count() -			 Returns the count of number of items passed as an argument
+sort() - 			Sort items in a list in ascending order
+reverse() -		 Reverse the order of items in the list
+copy() -		    	 Returns a shallow copy of the list
+
+BUILT-IN FUNCTIONS WITH LIST
+all()			Return True if all elements of the list are true (or if the list is empty).
+any()		Return True if any element of the list is true. If the list is empty, return False.
+enumerate()	Return an enumerate object. It contains the index and value of all the items of list as a tuple.
+len()			Return the length (the number of items) in the list.
+list()			Convert an iterable (tuple, string, set, dictionary) to a list.
+max()		Return the largest item in the list.
+min()		Return the smallest item in the list
+sorted()		Return a new sorted list (does not sort the list itself).
+sum()		Return the sum of all elements in the list.
+
+TYPECASTING
+str() 		 --print(str()+str()) #Joint Statement
+int()			 --print(int()+int()) 
+float()              --print(float()+float())
+
+FUNCTIONS FOR STRINGS
+Python String capitalize()		Converts first character to Capital Letter
+Python String center()	                Pads string with specified character
+Python String casefold()		converts to casefolded strings
+Python String count()			returns occurrences of substring in string
+Python String endswith()		Checks if String Ends with the Specified Suffix
+Python String expandtabs()		Replaces Tab character With Spaces
+Python String encode()			returns encoded string of given string
+Python String find()			Returns the index of first occurrence of substring
+Python String format()			formats string into nicer output
+Python String index()			Returns Index of Substring
+Python String isalnum()		Checks Alphanumeric Character
+Python String isalpha()			Checks if All Characters are Alphabets
+Python String isdecimal()		Checks Decimal Characters
+Python String isdigit()			Checks Digit Characters
+Python String isidentifier()		Checks for Valid Identifier
+Python String islower()			Checks if all Alphabets in a String are Lowercase
+Python String isnumeric()		Checks Numeric Characters
+Python String isprintable()		Checks Printable Character
+Python String isspace()			Checks Whitespace Characters
+Python String istitle()			Checks for Titlecased String
+Python String isupper()		returns if all characters are uppercase characters
+Python String join()			Returns a Concatenated String
+Python String ljust()			returns left-justified string of given width
+Python String rjust()			returns right-justified string of given width
+Python String lower()			returns lowercased string
+Python String upper()			returns uppercased string
+Python String swapcase()		swap uppercase characters to lowercase; vice versa
+Python String lstrip()			Removes Leading Characters
+Python String rstrip()			Removes Trailing Characters
+Python String strip()			Removes Both Leading and Trailing Characters
+Python String partition()		Returns a Tuple
+Python String maketrans()		returns a translation table
+Python String rpartition()		Returns a Tuple
+Python String translate()		returns mapped charactered string
+Python String replace()			Replaces Substring Inside
+Python String rfind()			Returns the Highest Index of Substring
+Python String rindex()			Returns Highest Index of Substring
+Python String split()			Splits String from Left
+Python String rsplit()			Splits String From Right
+Python String splitlines()		Splits String at Line Boundaries
+Python String startswith()		Checks if String Starts with the Specified String
+Python String title()			Returns a Title Cased String
+Python String zfill()			Returns a Copy of The String Padded With Zeros
+Python String format_map()	Formats the String Using Dictionary
+Python any()					Checks if any Element of an Iterable is True
+Python all()					returns true when all elements in iterable is true
+Python ascii()					Returns String Containing Printable Representation
+Python bool()					Converts a Value to Boolean
+Python bytearray()			returns array of given byte size
+Python bytes()				returns immutable bytes object
+Python compile()				Returns a Python code object
+Python complex()				Creates a Complex Number
+Python enumerate()			    Returns an Enumerate Object
+Python filter()				    constructs iterator from elements which are true
+Python float()				    returns floating point number from number, string
+Python input()				    reads and returns a line of string
+Python int()					returns integer from a number or string
+Python iter()					returns iterator for an object
+Python len()					Returns Length of an Object
+Python max()					returns largest element
+Python min()					returns smallest element
+Python map()					Applies Function and Returns a List
+Python ord()					returns Unicode code point for Unicode character
+Python reversed()				returns reversed iterator of a sequence
+Python slice()					creates a slice object specified by range()
+Python sorted()				    returns sorted list from a given iterable
+Python sum()					Add items of an Iterable
+Python zip()					Returns an Iterator of Tuples
+
+DICTIONARY F() IN PYTHON
+clear()			Remove all items form the dictionary.
+copy()			Return a shallow copy of the dictionary.
+fromkeys(seq[, v])	Return a new dictionary with keys from seq and value equal to v (defaults to None).
+get(key[,d])		Return the value of key. If key doesnot exit, return d (defaults to None).
+items()			Return a new view of the dictionary's items (key, value).
+keys()			Return a new view of the dictionary's keys.
+pop(key[,d])		Remove the item with key and return its value or d if key is not found. If d is not provided and key is not found, 				raises KeyError.
+popitem()		Remove and return an arbitary item (key, value). Raises KeyError if the dictionary is empty.
+setdefault(key[,d])	If key is in the dictionary, return its value. If not, insert key with a value of d and return d (defaults to None).
+update([other])	Update the dictionary with the key/value pairs from other, overwriting existing keys.
+values()			Return a new view of the dictionary's values
+
+TYPES OF OPERATORS IN PYTHON LANGUAGE
+Arithmetic Operators
+Comparison (Relational) Operators
+Assignment Operators
+Logical Operators
+Bitwise Operators
+Membership Operators
+Identity Operators
+
+FILE IO BASICS
+1. file.close()				It closes the opened file. The file once closed, it can?t be read or write any more.
+2. File.fush()				It flushes the internal buffer.
+3. File.fileno()				It returns the file descriptor used by the underlying implementation to request I/O from the OS.
+4. File.isatty()				It returns true if the file is connected to a TTY device, otherwise returns false.
+5. File.next()				It returns the next line from the file.
+6. nFile.read([size])		It reads the file for the specified size.
+7. File.readline([size])		It reads one line from the file and places the file pointer to the beginning of the new line.
+8. File.readlines([sizehint])	It returns a list containing all the lines of the file. It reads the file until the EOF occurs using readline() 								function.
+9. File.seek(offset[,from)	It modifies the position of the file pointer to a specified offset with the specified reference.
+10. File.tell()				It returns the current position of the file pointer within the file.
+11. File.truncate([size]	)	It truncates the file to the optional specified size.
+12. File.write(str)			It writes the specified string to a file
+13. File.writelines(seq)		It writes a sequence of the strings to a file.
+
+FILE MODES IN PYTHON
+'r'		This is the default mode. It Opens file for reading.
+'w'		This Mode Opens file for writing.      If file does not exist, it creates a new file.     If file exists it truncates the file.
+'x'		Creates a new file. If file already exists, the operation fails.
+'a'		Open file in append mode.          If file does not exist, it creates a new file
+'t'		This is the default mode. It opens in text mode.
+'b'		This opens in binary mode.
+'+'		This will open a file for reading and writing (updating)
+
+WRITING A FILE
+write() : 			 Inserts the string str1 in a single line in the text file.
+writelines() : 		 For a list of string elements, each string is inserted in the text file.Used to insert multiple strings at a single time.
+read() :			 Returns the read bytes in form of a string. Reads n bytes, if no n specified, reads the entire file.
+readline() :		 Reads a line of the file and returns in form of a string.For specified n, reads at most n bytes. However, does not 				reads more than one line, even if n exceeds the length of the line.
+readlines() :		 Reads all the lines and return them as each line a string element in a list.
+
+ESCAPE SEQUENCE IN PYTHON
+\\			Prints Backslash	
+\`			Prints single-quote	
+\"			Pirnts double quote
+\a			ASCII bell makes ringing the bell alert sounds ( eg. xterm )	
+\b			ASCII backspace ( BS ) removes previous character	
+\f			ASCII formfeed ( FF )	
+\n			ASCII linefeed ( LF )	
+\N{name}	Prints a character from the Unicode database	
+\r			ASCII carriage return (CR). Moves all characters after ( CR ) the the beginning of the line while overriding same number 			of characters moved.	
+\t			ASCII horizontal tab (TAB). Prints TAB	
+\t			ASCII vertical tab (VT).	
+\uxxxx		Prints 16-bit hex value Unicode character	
+\Uxxxxxxxx	Prints 32-bit hex value Unicode character	
+\ooo		Prints character based on its octal value	
+\xhh		Prints character based on its hex value	print 
+  
+PRINT()PAPAMETERS
+objects - object to the printed. * indicates that there may be more than one object
+sep - objects are separated by sep. Default value: ' '
+end - end is printed at last
+file - must be an object with write(string) method. If omitted it, sys.stdout will be used which prints objects on the screen.
+flush - If True, the stream is forcibly flushed. Default value: False

@@ -1,0 +1,129 @@
+import mysql.connector
+mydb = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    passwd = "toor",
+    database = "testdb"
+)
+
+#Making a Cursor that will communicate with the entire MYSQL server
+mycursor = mydb.cursor()
+#COMMANDS SENDING THROUGH CURSOR TO MYSQL SERVER 
+-----------------------------------------------------------------------------------
+mycursor.execute("SHOW DATABASES")
+for db in mycursor:
+    print(db)
+----------------------------------------
+
+mycursor.execute("CREATE TABLE students 
+		(name VARCHAR(255),age INTEGER(2))")
+-----------------------------------------
+mycursor.execute("SHOW TABLES")
+for table in mycursor:
+    print(table)
+-----------------------------------------
+sqlFourmula = "INSERT INTO students (name, age) 
+		VALUES (%s, %s)"
+student1 = ("Rachel",22)
+
+mycursor.execute(sqlFourmula, student1)
+
+mydb.commit()
+#MYDB.COMMIT IS GONNA SAVE THE CHANGE T
+	HAT YOU MAKE IN THE DATABASE 
+	MAKE SURE TO USE IT EVERY TIME YOU 
+	MANIPULATE THE DATABASE
+------------------------------------------
+sqlFourmula = "INSERT INTO students (name, age) VALUES (%s, %s)"
+students = [("Josheph Rachel",22),
+           ("Bob Lazer",21),
+           ("Amanda Pons",18),
+           ("Jacob Burns",19),
+           ("Avi Walker",16),
+           ("Michelle Baker",17)]
+
+mycursor.executemany(sqlFourmula, students)
+
+mydb.commit()
+#MYDB.COMMIT IS GONNA SAVE THE CHANGE T
+	HAT YOU MAKE IN THE DATABASE 
+	MAKE SURE TO USE IT EVERY TIME YOU 
+	MANIPULATE THE DATABASE
+-------------------------------------------
+mycursor.execute("SELECT * FROM students")
+
+myresult = mycursor.fetchall()
+
+for row in myresult: 
+    print(row)
+-------------------------------------------
+mycursor.execute("SELECT * FROM students")
+
+myresult = mycursor.fetchone()
+
+for row in myresult: 
+    print(row)
+-------------------------------------------
+sql = "SELECT * FROM students WHERE age = 17"
+mycursor.execute(sql)
+myresult = mycursor.fetchall()
+
+for result in myresult:
+    print(result)
+-------------------------------------------
+sql = "SELECT * FROM students WHERE name LIKE '%ac%'"
+mycursor.execute(sql)
+myresult = mycursor.fetchall()
+
+for result in myresult:
+    print(result)
+-------------------------------------------
+sql = "SELECT * FROM students WHERE name = %s"
+mycursor.execute(sql, ("Rachel", ))
+myresult = mycursor.fetchall()
+
+for result in myresult:
+    print(result)
+--------------------------------------------
+sql = "UPDATE students SET age = 13 WHERE name = 'Bob Lazer'"
+mycursor.execute(sql)
+mydb.commit()
+----------------------------------------------
+mycursor.execute("SELECT * FROM students LIMIT 5")
+
+myresult = mycursor.fetchall()
+for result in myresult:
+    print(result)
+----------------------------------------------
+mycursor.execute("SELECT * FROM students LIMIT 5 OFFSET 2")
+
+myresult = mycursor.fetchall()
+for result in myresult:
+    print(result)
+---------------------------------------------
+sql = "SELECT * FROM students ORDER BY name"
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for r in myresult:
+    print(r)
+---------------------------------------------
+sql = "DELETE FROM students WHERE name = 'Bob Lazer'
+mycursor.execute(sql)
+mydb.commit()
+---------------------------------------------
+sql = "DROP TABLE students"
+mycursor.execute(sql)
+mydb.commit()
+---------------------------------------------
+sql = "DROP TABLE IF EXISTS students"
+mycursor.execute(sql)
+mydb.commit()
+--------------------------------------------
+
+
+
+
+
+
+

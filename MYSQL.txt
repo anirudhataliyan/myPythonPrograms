@@ -1,0 +1,103 @@
+#BASIC QUERIES IN MYSQL
+mysql> create database try;
+mysql> use try;
+mysql> create table ee(code int(30), name char(40), age int(03), dob date, salary int(50));
+mysql> insert into ee values(1, Alan Walker, 29, '1989-09-27', 50000000);
+mysql> insert into ee values(1, 'Alan Walker', 29, '1989/09/27',50000000);
+mysql> select * from ee;
+mysql> #This is a comment
+
+#BASIC
+mysql> insert into ee (name) values("Special Insert") ;
+mysql> desc ee;
+mysql> show tables;
+mysql> show databases;
+mysql> select distinct * from ee;
+mysql> select distinct name from ee;
+
+#SCALER CALCULATIONS
+mysql> select 3+2;
+mysql> select 3-2;
+
+
+mysql> select * from ee where name is null;
+mysql> select name as naam from ee;
+mysql> select * from ee where name = "Alan Walker" && age=16;
+mysql> select * from ee where name = "Alan Walker" or age=16;
+mysql> select * from ee where age!=16;
+mysql> select * from ee where age between 20 and 30;
+mysql> select * from ee where age in(29,16);
+mysql> select * from ee where name like "A%" or name like "E%" or name like "I%" or "O%" or name like "%U";
+mysql> select * from ee where name like "__a_%";
+mysql> select * from ee order by name desc;
+mysql> select * from ee order by name ;
+
+
+mysql> update ee set name="Felix" where code=2;
+mysql> update ee set code = code + 100;
+mysql> update ee set name = "Ram" where name like '%A' or name like "%E" or name like "%I" or name like "%O" or name like "%U";
+
+
+mysql> delete from ee where code>=3;
+mysql> delete from ee where name like "A%" or name like "E%".......;
+
+
+mysql> drop table ee;
+mysql> drop database dummy;
+
+
+mysql> alter table ee add address char(30);
+mysql> alter table ee modify name char(99);
+mysql> alter table ee drop age;
+mysql> alter table ee change salary tankha int(30);
+
+
+mysql> create table try (code int(10)unique,name char(40));
+mysql> create table try1 (code int(10)primary key,name char(40));
+#No Null Values
+mysql> create table try2 (code int(10)not null,name char(40));
+mysql> create table try3 (code int(10),name char(40)default "THIS IS EMPTY");
+mysql> create table try4 (code int(10)check(code>50) ,name char(40));
+
+
+mysql> select mod(9,3);  #A.K.A. Remainder
+mysql> select power(2,3);
+mysql> select sqrt(25);  #A.K.A. Square root
+mysql> select round(25.69,1); #ROUND OFF
+mysql> select truncate(25.79,1);   #TRUNCATE VALUE NOT ROUND-OFF
+
+
+
+mysql> select char(69);   #CONVERT TO ASCII VALUE
+mysql> select char(70,65,67,69);
+mysql> select lower("Ram");
+mysql> select upper("Ram");
+mysql> SELECT name,UPPER(name) FROM publisher WHERE country='USA';
+mysql> select substr("Bikaner", 1,2);
+mysql> select instr("Bikaner", "K");
+mysql> select length("Bikaner");
+mysql> select left ("Bikaner",2);
+mysql> select right("Bikaner",2);
+mysql> select ltrim("      Ram");
+mysql> select rtrim("Ram     ");
+mysql> select trim("     Ram         ");
+
+
+
+mysql> select curdate();
+mysql> select date("2019/09/27 9:25:00");
+mysql> select month("2019/09/27");
+mysql> select year("2019/09/27");
+mysql> select dayname("2019/09/27");
+mysql> select dayofmonth("2019/09/27");
+mysql> select dayofweek("2019/09/27");
+mysql> select dayofyear("2019/09/27");
+mysql> select now();
+mysql> select sysdate();
++---------------------------------------------------------------------------------------+
+
+
+
+
+
+
