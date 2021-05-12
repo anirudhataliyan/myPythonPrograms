@@ -10,66 +10,80 @@ Last modified by : Rishav Das (https://github.com/rdofficial/)
 Last modified on : May 12, 2021
 
 Changed made in the last modification :
-1. Removed the zero division error + changed the variable names.
-2. Added commented docs + added in-code comment lines to make the source code properly readable as well as makes the source code beautiful.
+1. Added the main function and put the entire source code inside it.
+2. Added the conditional statements for the proper calling of the main function + error handling too at that point of the script execution.
+3. Also the error catching code by which now the user has the option to exit the script anytime by pressing the CTRL+C key combination.
 
 Authors contributed to this script (Add your name below if you have contributed) :
 1. Anirudha Taliyan (github:https://github.com/anirudhataliyan/, email:akt746083@gmail.com)
 2. Rishav Das (github:https://github.com/rdofficial/, email:rdofficial192@gmail.com)
 """
 
-# Using a while true loop in order for infinite execution of the script
-while True:
-    # Asking the user to choose the operation
-    choice = input("""
-Select your choice :
-1. Addition
-2. Subtraction
-3. Multiplication
-4. Division
+def main():
+    # Using a while true loop in order for infinite execution of the script
+    while True:
+        # Asking the user to choose the operation
+        choice = input("""
+    Select your choice :
+    1. Addition
+    2. Subtraction
+    3. Multiplication
+    4. Division
 
-Enter your choice : """)
+    Enter your choice : """)
 
-    # Asking the user to enter two numbers
-    number1 = int(input('\nEnter the first number : '))
-    number2 = int(input('Enter the second number : '))
+        # Asking the user to enter two numbers
+        number1 = int(input('\nEnter the first number : '))
+        number2 = int(input('Enter the second number : '))
 
-    # Executing the arithmetic calculation as per user entered choice
-    if choice == '1':
-        # If the user entered the option for addition, then we continue to add the numbers
+        # Executing the arithmetic calculation as per user entered choice
+        if choice == '1':
+            # If the user entered the option for addition, then we continue to add the numbers
 
-        print(f'\n[ The result of the addition is : {number1 + number2} ]')
-    elif choice == '2':
-        # If the user entered the option for subtraction, then we continue to add the numbers
+            print(f'\n[ The result of the addition is : {number1 + number2} ]')
+        elif choice == '2':
+            # If the user entered the option for subtraction, then we continue to add the numbers
 
-        print(f'\n[ The result of the subtraction is : {number1 - number2} ]')
-    elif choice == '3':
-        # If the user entered the option for addition, then we continue to add the numbers
+            print(f'\n[ The result of the subtraction is : {number1 - number2} ]')
+        elif choice == '3':
+            # If the user entered the option for addition, then we continue to add the numbers
 
-        print(f'\n[ The result of the addition is : {number1 * number2} ]')
-    elif choice == '4':
-        # If the user entered the option for division, then we continue to add the numbers
+            print(f'\n[ The result of the addition is : {number1 * number2} ]')
+        elif choice == '4':
+            # If the user entered the option for division, then we continue to add the numbers
 
-        if number2 == 0:
-            # If the user entered second number is 0, then we display the error message on the console screen (cannot divide by zero)
+            if number2 == 0:
+                # If the user entered second number is 0, then we display the error message on the console screen (cannot divide by zero)
 
-            print('\n[ Error : Cannot divide by 0 ]')
+                print('\n[ Error : Cannot divide by 0 ]')
+            else:
+                # If the user entered second number is not 0, then we continue
+
+                print(f'\n[ The result of the division is : {number1 / number2} ]')
         else:
-            # If the user entered second number is not 0, then we continue
+            # If the user entered an unrecognized option, then we display the error on the console screen
 
-            print(f'\n[ The result of the division is : {number1 / number2} ]')
-    else:
-        # If the user entered an unrecognized option, then we display the error on the console screen
+            print('\n[ Error : No such options available ]')
 
-        print('\n[ Error : No such options available ]')
+        # Asking the user wheter to continue the loop or not
+        choice = input('\nDo you want to do it again ? (Y) :')
+        if choice.lower() == 'y' or choice.lower() == 'yes':
+            # If the user entered the option for continue, then we proceed
 
-    # Asking the user wheter to continue the loop or not
-    choice = input('\nDo you want to do it again ? (Y) :')
-    if choice.lower() == 'y' or choice.lower() == 'yes':
-        # If the user entered the option for continue, then we proceed
+            continue
+        else:
+            # If the user entered any other option other than 'y' or 'yes', then we break the loop to close the program
 
-        continue
-    else:
-        # If the user entered any other option other than 'y' or 'yes', then we break the loop to close the program
+            break
 
-        break
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        # If the user presses CTRL+C key combo, then we quit the script
+
+        exit()
+    except Exception as e:
+        # If there are any errors encountered during the process, then we display the error message on the console screen
+
+        input(f'\n[ Error : {e} ]\nPress enter key to continue...')
