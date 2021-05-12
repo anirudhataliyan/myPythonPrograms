@@ -1,23 +1,75 @@
-#Made My Anirudha Kumar
-while(True):
-    print("Select Your Operator")
-    print("1. Adition")
-    print("2. Subtaction")
-    print("3. Multiplication")
-    print("4. Division")
-    operator = input("Select your operator (1/2/3/4) : ")
-    x = int(input("Enter Your First Number : "))
-    y = int(input("Enter Your Secound Number : ")) 
-    if operator == "1":
-        print("Sum Of These Numbers Is : ", int(x) + int(y))    
-    if operator == "2":
-        print("Subtracted Number is : ", int(x)-int(y))
-    if operator == "3":
-        print("Multiplication of Number is : ", int(x)*int(y))
-    if operator == "4":
-        print("Divided Number is : ", int(x)/int(y))                      
+"""
+Calculator
+
+A simple calculator program written in Python3, that serves the 4 basic arithemtic operations - Addition, Subtraction, Multiplication, Division. This script is written only for learning purposes and is very good practice for python language beginners to learn using this program.
+
+Author : Anirudha Taliyan (https://github.com/anirudhataliyan/)
+Created on : April 4, 2019
+
+Last modified by : Rishav Das (https://github.com/rdofficial/)
+Last modified on : May 12, 2021
+
+Changed made in the last modification :
+1. Removed the zero division error + changed the variable names.
+2. Added commented docs + added in-code comment lines to make the source code properly readable as well as makes the source code beautiful.
+
+Authors contributed to this script (Add your name below if you have contributed) :
+1. Anirudha Taliyan (github:https://github.com/anirudhataliyan/, email:akt746083@gmail.com)
+2. Rishav Das (github:https://github.com/rdofficial/, email:rdofficial192@gmail.com)
+"""
+
+# Using a while true loop in order for infinite execution of the script
+while True:
+    # Asking the user to choose the operation
+    choice = input("""
+Select your choice :
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+
+Enter your choice : """)
+
+    # Asking the user to enter two numbers
+    number1 = int(input('\nEnter the first number : '))
+    number2 = int(input('Enter the second number : '))
+
+    # Executing the arithmetic calculation as per user entered choice
+    if choice == '1':
+        # If the user entered the option for addition, then we continue to add the numbers
+
+        print(f'\n[ The result of the addition is : {number1 + number2} ]')
+    elif choice == '2':
+        # If the user entered the option for subtraction, then we continue to add the numbers
+
+        print(f'\n[ The result of the subtraction is : {number1 - number2} ]')
+    elif choice == '3':
+        # If the user entered the option for addition, then we continue to add the numbers
+
+        print(f'\n[ The result of the addition is : {number1 * number2} ]')
+    elif choice == '4':
+        # If the user entered the option for division, then we continue to add the numbers
+
+        if number2 == 0:
+            # If the user entered second number is 0, then we display the error message on the console screen (cannot divide by zero)
+
+            print('\n[ Error : Cannot divide by 0 ]')
+        else:
+            # If the user entered second number is not 0, then we continue
+
+            print(f'\n[ The result of the division is : {number1 / number2} ]')
     else:
-        z = input("Press Y to countinue And N to stop : ")
-        if z == "N":
-            print("Thanks ... See You Again") 
-            break
+        # If the user entered an unrecognized option, then we display the error on the console screen
+
+        print('\n[ Error : No such options available ]')
+
+    # Asking the user wheter to continue the loop or not
+    choice = input('\nDo you want to do it again ? (Y) :')
+    if choice.lower() == 'y' or choice.lower() == 'yes':
+        # If the user entered the option for continue, then we proceed
+
+        continue
+    else:
+        # If the user entered any other option other than 'y' or 'yes', then we break the loop to close the program
+
+        break
